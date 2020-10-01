@@ -48,6 +48,35 @@ namespace ConsoleUI
 
             #endregion            
             Console.ReadLine();
+            var vehicles = new List<Vehicle>();
+
+            var focus = new Car() { HasTrunk = true, Make  = "Ford", Model = "Focus", Year = 2013 };
+            var motorcycle = new Motorcycle() { HasSideCart = true, Make = "HD", Model = "Chopper", Year = 1978 };
+
+            Vehicle sedan = new Car() { HasTrunk = true, Make = "Dodge", Model = "Blah", Year = 2019 };
+            Vehicle sport = new Car() { HasTrunk = false, Make = "Ferrari", Model = "Something", Year = 2000 };
+
+            vehicles.Add(focus);
+            vehicles.Add(motorcycle);
+            vehicles.Add(sedan);
+            vehicles.Add(sport);
+
+            foreach (var vehicle in vehicles)
+            {
+
+
+                Console.WriteLine($"Make:{vehicle.Make} Model: {vehicle.Model} Year: {vehicle.Year} ");
+                vehicle.DriveAbstract();
+                Console.WriteLine("-----------------------------------");
+            }
+
+
+
+
+
+
+
+            
         }
     }
 }
